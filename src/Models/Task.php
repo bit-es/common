@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Task extends Model
 {
+    protected $table = 'cmn_tasks';
+    
     protected $guarded = [];
 
     public function taskable(): MorphTo

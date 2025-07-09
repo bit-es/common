@@ -1,112 +1,79 @@
 <?php
 
-use App\Models\Bom\Pcf;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
-        // Process Classification Framework
-        Schema::create('bom_pcf_tiers', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('level');
-            $table->string('description');
-            $table->timestamps();
-        });
-        Schema::create('bom_pcfs', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->longText('definition')->nullable();
-            $table->string('hierarchy_code');
-            $table->foreignId('accountable_id')->nullable()->constrained('org_job_positions')->onDelete('cascade');
-            $table->foreignId('pcf_tier_id')->constrained('bom_pcf_tiers')->onDelete('cascade');
-            $table->foreignId('parent_id')->nullable()->constrained('bom_pcfs')->onDelete('cascade');
-            $table->string('apqc');
-            $table->string('shortcode');
-            $table->timestamps();
-        });
-        // Schema::create('bom_pcf_exts', function (Blueprint $table) {
-        //     $table->bigIncrements('id');
-        //     $table->foreignId('pcf_id')->constrained('bom_pcfs')->onDelete('cascade');
-        //     $table->foreignId('accountable_id')->nullable()->constrained('org_job_positions')->onDelete('cascade');
-        //     $table->foreignId('responsible_id')->nullable()->constrained('org_job_roles')->onDelete('cascade');
-        //     $table->timestamps();
-        // });
-        // Process Cluster
-        Schema::create('bom_processes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->json('workflow');
-            $table->foreignId('pcf_id')->constrained('bom_pcfs')->onDelete('cascade');
+        Schema::create('cmn_notes', function (Blueprint $table) {
+            $table->id();
+            $table->text('body');
+            $table->morphs('noteable');
             $table->timestamps();
         });
 
-        Schema::create('bom_turtles', function (Blueprint $table) {
+        Schema::create('cmn_photos', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->text('brief');
-            $table->longText('description')->nullable();
-            $table->foreignId('owner_id')->nullable()->constrained('org_job_positions')->onDelete('cascade');
-            $table->foreignId('parent_id')->nullable()->constrained('bom_turtles')->onDelete('cascade');
+            $table->morphs('imageable');
+            $table->string('key');
+            $table->string('title');
+            $table->string('value')->nullable(); // Store the value as a string
+            $table->string('criteria')->nullable();
+            $table->foreignId('created_by')->nullable()->constrained('users')->onDelete('cascade');
+            $table->unsignedBigInteger('parent_id')->nullable(); // Reference to parent attribute
             $table->timestamps();
         });
 
-        Schema::create('bom_limbs', function (Blueprint $table) {
+        Schema::create('cmn_files', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('type'); // inputs, outputs, process, etc.
+            $table->string('path');
+            $table->string('name');
+            $table->string('type')->nullable();
+            $table->morphs('fileable');
+            $table->timestamps();
+        });
+
+        Schema::create('cmn_tasks', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->date('due_date')->nullable();
+            $table->boolean('is_completed')->default(false);
+            $table->morphs('taskable');
+            $table->timestamps();
+        });
+
+        Schema::create('cmn_measurements', function (Blueprint $table) {
+            $table->id();
+            $table->string('type');
+            $table->decimal('value', 10, 2);
+            $table->string('unit')->nullable();
+            $table->morphs('measurable');
+            $table->timestamps();
+        });
+        Schema::create('cmn_events', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->timestamp('start');
+            $table->timestamp('end')->nullable();
             $table->string('url')->nullable();
-            $table->string('action')->nullable();
+            $table->string('color')->nullable();
+            $table->boolean('all_day')->default(false);
             $table->timestamps();
         });
-
-        Schema::create('bom_limbables', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('limb_id');
-            $table->unsignedBigInteger('limbable_id');
-            $table->string('limbable_type');
-            $table->timestamps();
-        });
-
-        Schema::create('limb_role', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('limb_id')->constrained('bom_limbs')->onDelete('cascade');
-            $table->foreignId('role_id')->constrained('roles')->onDelete('cascade');
-            $table->timestamps();
-        });
-
-        // Read JSON data
-        // $jsonFilePath = url('https://raw.githubusercontent.com/bit-ecosystem/bites/refs/heads/main/curio/standards/2025_02_bom.json');
-        // $jsonData = json_decode(file_get_contents($jsonFilePath), true);
-
-        // // Seed data
-        // DB::table('bom_pcf_tiers')->insert($jsonData['bom_pcf_tiers']);
-        // // DB::table('bom_pcfs')->insert($jsonData['bom_pcfs']);
-        // foreach ($jsonData['bom_pcfs'] as $positionData) {
-        //     Pcf::create($positionData);
-        // }
-        // DB::table('bom_pcf_exts')->insert($jsonData['bom_pcf_exts']);
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('limb_role');
-        Schema::dropIfExists('bom_limbables');
-        Schema::dropIfExists('bom_limbs');
-        Schema::dropIfExists('bom_turtles');
-        Schema::dropIfExists('bom_processes');
-        Schema::dropIfExists('bom_pcf_exts');
-        Schema::dropIfExists('bom_pcfs');
-        Schema::dropIfExists('bom_pcf_tiers');
+        Schema::dropIfExists('cmn_notes');
+        Schema::dropIfExists('cmn_photos');
+        Schema::dropIfExists('cmn_files');
+        Schema::dropIfExists('cmn_tasks');
+        Schema::dropIfExists('cmn_measurements');
+        Schema::dropIfExists('cmn_events');
     }
 };

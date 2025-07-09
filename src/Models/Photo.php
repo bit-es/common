@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Photo extends Model
 {
+    protected $table = 'cmn_photos';
+
     protected $guarded = [];
 
     public function imageable(): MorphTo
