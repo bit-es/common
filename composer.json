@@ -1,0 +1,69 @@
+{
+    "name": "bit-es/common",
+    "description": "This is bites package with common models that maybe used by any other models as its attributes",
+    "keywords": [
+        "bit-es",
+        "common",
+        "laravel",
+        "filament"
+    ],
+    "homepage": "https://github.com/bit-es/common",
+    "support": {
+        "issues": "https://github.com/bit-es/common/issues",
+        "source": "https://github.com/bit-es/common"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "bit-es",
+            "email": "bit.ecosystem@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "filament/filament": "^3.3",
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^8.6",
+        "pestphp/pest": "^3.7",
+        "pestphp/pest-plugin-laravel": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bites\\Common\\": "src/"
+        }
+    },
+    // "autoload-dev": {
+    //     "psr-4": {
+    //         "Bites\\Common\\Tests\\": "tests/"
+    //     }
+    // },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php artisan migrate",
+        ],
+        "post-update-cmd": [],
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bites\\Common\\CommonServiceProvider"
+            ],
+            "aliases": {
+                "Common": "Bites\\Common\\Facades\\Common"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
