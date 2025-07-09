@@ -22,7 +22,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "filament/filament": "^3.3",
+        "filament/filament": "^3.3"
     },
     "require-dev": {
         "nunomaduro/collision": "^8.6",
@@ -34,14 +34,9 @@
             "Bites\\Common\\": "src/"
         }
     },
-    // "autoload-dev": {
-    //     "psr-4": {
-    //         "Bites\\Common\\Tests\\": "tests/"
-    //     }
-    // },
     "scripts": {
         "post-autoload-dump": [
-            "@php artisan migrate",
+            "@php artisan migrate"
         ],
         "post-update-cmd": [],
         "test": "vendor/bin/pest",
