@@ -1,0 +1,42 @@
+{
+    "users": [
+        {
+            "username": "atmuser1",
+            "enabled": true,
+            "email": "atmuser1@example.com",
+            "firstName": "Adi",
+            "lastName": "Qalif",
+            "createdTimestamp": 1720502400000,
+            "credentials": [
+                {
+                    "type": "password",
+                    "value": "securePass123",
+                    "temporary": true
+                }
+            ],
+            "realmRoles": [
+                "ATM Staff",
+                "default-roles-amkor technology malaysia"
+            ]
+        },
+        {
+            "username": "atmuser2",
+            "enabled": true,
+            "email": "atmuser2@example.com",
+            "firstName": "Adi",
+            "lastName": "Qamil",
+            "createdTimestamp": 1720502400000,
+            "credentials": [
+                {
+                    "type": "password",
+                    "value": "securePass123",
+                    "temporary": true
+                }
+            ],
+            "realmRoles": [
+                "ATM Staff",
+                "default-roles-amkor technology malaysia"
+            ]
+        }
+    ]
+}

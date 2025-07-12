@@ -22,6 +22,7 @@
     ],
     "require": {
         "php": "^8.2",
+        "bit-es/common": "dev-main",
         "filament/filament": "^3.3"
     },
     "require-dev": {

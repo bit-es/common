@@ -1,0 +1,35 @@
+{
+  "realm": "ProjectX",
+  "enabled": true,
+  "roles": {
+    "realm": [
+      {
+        "name": "editor",
+        "description": "Can edit content for ProjectX"
+      }
+    ]
+  },
+  "groups": [
+    {
+      "name": "Editors-ProjectX",
+      "realmRoles": ["editor"]
+    }
+  ],
+  "users": [
+    {
+      "username": "editoruser1",
+      "enabled": true,
+      "email": "editor1@example.com",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "securePass123",
+          "temporary": false
+        }
+      ],
+      "groups": ["/Editors-ProjectX"]
+    }
+  ]
+}
