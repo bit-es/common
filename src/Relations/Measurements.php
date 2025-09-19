@@ -117,7 +117,7 @@ class Measurements extends RelationManager
                 //         ),
             ])
             ->headerActions([
-                CreateAction::make()->label('Add'),
+                CreateAction::make()->label('Add')->modalWidth('6xl'),
                 // AssociateAction::make(),
             ])
             ->recordActions([

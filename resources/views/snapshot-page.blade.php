@@ -10,7 +10,8 @@
             Snap
         </x-filament::button>
 
-        <x-filament::button id="switchCameraButton" icon="bites-swap-cam">
+        {{-- <x-filament::button id="switchCameraButton" icon="bites-swap-cam"> --}}
+        <x-filament::button id="switchCameraButton" icon="heroicon-o-camera">
         </x-filament::button>
     </div>
 
