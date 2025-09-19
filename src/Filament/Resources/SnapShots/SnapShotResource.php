@@ -43,6 +43,7 @@ class SnapShotResource extends Resource
             'index' => Pages\ListSnapShots::route('/'),
             'create' => Pages\CreateSnapShot::route('/create'),
             'edit' => Pages\EditSnapShot::route('/{record}/edit'),
+            // 'add' => Pages\AddSnapShot::route('/add'),
         ];
     }
 }

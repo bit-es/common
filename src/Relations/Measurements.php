@@ -121,7 +121,7 @@ class Measurements extends RelationManager
                 // AssociateAction::make(),
             ])
             ->recordActions([
-                EditAction::make(),
+                // EditAction::make(),
                 // DissociateAction::make(),
                 DeleteAction::make(),
             ])
@@ -191,7 +191,7 @@ class Measurements extends RelationManager
                 ->visible(fn (callable $get) => $get('input_type') === 'ColorPicker'),
             \Filament\Forms\Components\Slider::make('value')->label('Value')->required()
                 ->visible(fn (callable $get) => $get('input_type') === 'Slider'),
-            \Bites\Common\Filament\Resources\Support\ScanCode::make('value')->label('Value')->required()
+            \Bites\Common\Filament\Field\ScanCode::make('value')->label('Value')->required()
                 ->visible(fn (callable $get) => $get('input_type') === 'ScanCode'),
 
         ];

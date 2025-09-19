@@ -63,10 +63,47 @@ return new class extends Migration
             $table->unsignedBigInteger('parent_id')->nullable(); // Reference to parent attribute
             $table->timestamps();
         });
+        Schema::create('workflows', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->string('model_type');
+            $table->timestamps();
+        });
+        Schema::create('workflow_states', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('workflow_id')->constrained('workflows')->onDelete('cascade');
+            $table->string('name');
+            $table->boolean('is_initial')->default(false);
+            $table->boolean('is_final')->default(false);
+            $table->timestamps();
+        });
+        Schema::create('workflow_transitions', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('workflow_id')->constrained('workflows')->onDelete('cascade');
+            $table->foreignId('from_state_id')->constrained('workflow_states')->onDelete('cascade');
+            $table->foreignId('to_state_id')->constrained('workflow_states')->onDelete('cascade');
+            $table->string('name');
+            $table->string('guard')->nullable();
+            $table->string('action')->nullable();
+            $table->timestamps();
+        });
+        Schema::create('workflow_instances', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('workflow_id')->constrained('workflows')->onDelete('cascade');
+            $table->unsignedBigInteger('model_id');
+            $table->string('model_type');
+            $table->foreignId('current_state_id')->constrained('workflow_states')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     public function down(): void
     {
+        Schema::dropIfExists('workflow_instances');
+        Schema::dropIfExists('workflow_transitions');
+        Schema::dropIfExists('workflow_states');
+        Schema::dropIfExists('workflows');
         Schema::dropIfExists('snapshots');
         Schema::dropIfExists('movements');
         Schema::dropIfExists('locations');

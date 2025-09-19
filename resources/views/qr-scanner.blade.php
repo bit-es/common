@@ -44,17 +44,10 @@
 
             <x-slot name="suffix">
                 <!-- Trigger Button for Filament Modal -->
-                <button type="button" @click="openScannerModal()" class="flex items-center pr-3 focus:outline-none"
-                    aria-label="Qr/BarCode Scan">
-                    <x-filament::icon :name="$getExtraAttributes()['heroicon'] ?? 'heroicon-o-camera'" class="w-5 h-5 text-gray-400 dark:text-gray-200" />
-                    {{-- @if ($getExtraAttributes()['icon'] ?? null)
-                        <span class="text-gray-400 dark:text-gray-200">
-                            <x-dynamic-component :component="$getExtraAttributes()['icon']" class="w-5 h-5" />
-                        </span>
-                    @else
-                        <x-bites-scan-w-cam class="w-5 h-5 text-gray-400 dark:text-gray-200" />
-                    @endif --}}
-                    Scan</button>
+                <button type="button" @click="openScannerModal()" class="flex items-center pr-3 focus:outline-none">
+                    <x-filament::icon :name="$getExtraAttributes()['icon'] ?? 'heroicon-o-qr-code'" class="w-5 h-5" />
+                    <span class="ml-1 text-sm">Scan</span>
+                </button>
             </x-slot>
         </x-filament::input.wrapper>
 

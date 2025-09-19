@@ -1,6 +1,6 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\Support;
+namespace Bites\Common\Filament\Field;
 
 use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Concerns\HasFileAttachments;

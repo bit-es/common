@@ -11,13 +11,13 @@ use BackedEnum;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Support\Facades\Auth;
 
-class CreateSnapshot extends Page
+class AddSnapshot extends Page
 {
     protected static string $resource = SnapshotResource::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCamera;
 
-    // protected static string $view = 'bites::snapshot-page';
+    protected static string $view = 'bites::snapshot-page';
 
     public function saveSnapshot($snapshot, $modelId, $modelType, $done_route, $photo_tag, $title, $latitude, $longitude, $filepath = 'public/snapshots')
     {
