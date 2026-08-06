@@ -1,11 +1,11 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\SnapShots;
+namespace Bites\Core\Filament\Resources\SnapShots;
 
-use Bites\Common\Filament\Resources\SnapShots\Pages;
-use Bites\Common\Filament\Resources\SnapShots\Schemas\SnapShotForm;
-use Bites\Common\Filament\Resources\SnapShots\Tables\SnapShotsTable;
-use Bites\Common\Models\Camera;
+use Bites\Core\Filament\Resources\SnapShots\Pages;
+use Bites\Core\Filament\Resources\SnapShots\Schemas\SnapShotForm;
+use Bites\Core\Filament\Resources\SnapShots\Tables\SnapShotsTable;
+use Bites\Core\Models\Camera;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\Measurements\Pages;
+namespace Bites\Core\Filament\Resources\Measurements\Pages;
 
-use Bites\Common\Filament\Resources\Measurements\MeasurementResource;
+use Bites\Core\Filament\Resources\Measurements\MeasurementResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 

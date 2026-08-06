@@ -1,8 +1,8 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\Measurements\Pages;
+namespace Bites\Core\Filament\Resources\Measurements\Pages;
 
-use Bites\Common\Filament\Resources\Measurements\MeasurementResource;
+use Bites\Core\Filament\Resources\Measurements\MeasurementResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 

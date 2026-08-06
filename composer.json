@@ -1,16 +1,16 @@
 {
-    "name": "bit-es/common",
-    "description": "This is bites package with common models that maybe used by any other models as its attributes",
+    "name": "bit-es/core",
+    "description": "This is bites package with core models that maybe used by any other models as its attributes",
     "keywords": [
         "bit-es",
-        "common",
+        "core",
         "laravel",
         "filament"
     ],
-    "homepage": "https://github.com/bit-es/common",
+    "homepage": "https://github.com/bit-es/core",
     "support": {
-        "issues": "https://github.com/bit-es/common/issues",
-        "source": "https://github.com/bit-es/common"
+        "issues": "https://github.com/bit-es/core/issues",
+        "source": "https://github.com/bit-es/core"
     },
     "license": "MIT",
     "authors": [
@@ -22,7 +22,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "bit-es/common": "dev-main",
+        "bit-es/core": "dev-main",
         "filament/filament": "^4.0"
     },
     "require-dev": {
@@ -32,7 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Bites\\Common\\": "src/"
+            "Bites\\Core\\": "src/"
         }
     },
     "scripts": {
@@ -53,10 +53,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Bites\\Common\\CommonServiceProvider"
+                "Bites\\Core\\CoreServiceProvider"
             ],
             "aliases": {
-                "Common": "Bites\\Common\\Facades\\Common"
+                "Core": "Bites\\Core\\Facades\\Core"
             }
         }
     },

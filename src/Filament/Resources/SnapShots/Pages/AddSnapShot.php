@@ -1,9 +1,9 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\SnapShots\Pages;
+namespace Bites\Core\Filament\Resources\SnapShots\Pages;
 
-use Bites\Common\Filament\Resources\SnapShots\SnapshotResource;
-use Bites\Common\Models\Camera;
+use Bites\Core\Filament\Resources\SnapShots\SnapshotResource;
+use Bites\Core\Models\Camera;
 use Filament\Resources\Pages\Page;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;

@@ -1,13 +1,13 @@
-# Bites Common Laravel Filament Package
+# Bites Core Laravel Filament Package
 
-This Laravel Composer package provides common features such as Measurements and Snapshot with Camera.
+This Laravel Composer package provides core features such as Measurements and Snapshot with Camera.
 
 ## Installation
 
 Install the package via Composer:
 
 ```bash
-composer require bit-es/common
+composer require bit-es/core
 ```
 
 ## Usage
@@ -19,8 +19,8 @@ composer require bit-es/common
 
 namespace .......
 
-use Bites\Common\Traits\HasMeasurements;
-use Bites\Common\Traits\HasCamera;
+use Bites\Core\Traits\HasMeasurements;
+use Bites\Core\Traits\HasCamera;
 
 use ......
 
@@ -48,8 +48,8 @@ class ........ extends Resource
     public static function getRelations(): array
     {
         return [
-            \Bites\Common\Relations\Measurements::class,
-            \Bites\Common\Relations\Camera::class,
+            \Bites\Core\Relations\Measurements::class,
+            \Bites\Core\Relations\Camera::class,
         ];
     }
 }
@@ -71,7 +71,7 @@ class ......... extends PanelProvider
         return $panel
             ->.......
             ->plugins([
-                \Bites\Common\CommonPlugin::make(),
+                \Bites\Core\CorePlugin::make(),
             ])
             ->......;
     }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Bites\Common\Relations;
+namespace Bites\Core\Relations;
 
-use Bites\Common\Filament\Resources\SnapShots\Pages;
+use Bites\Core\Filament\Resources\SnapShots\Pages;
 use Filament\Actions;
 use Filament\Forms\Components;
 use Filament\Resources\RelationManagers\RelationManager;
@@ -54,7 +54,7 @@ class Camera extends RelationManager
                     ->label('Add')
                     ->icon('heroicon-o-camera')
                     ->action(function () {
-                        $url = \Bites\Common\CommonPlugin::getCreateSnapshotRouteFromPage([
+                        $url = \Bites\Core\CorePlugin::getCreateSnapshotRouteFromPage([
                             'modelId' => $this->ownerRecord->id,
                             'modelType' => get_class($this->ownerRecord),
                             'returnTo' => request()->session()->previousUrl(),

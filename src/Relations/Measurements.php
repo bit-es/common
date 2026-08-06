@@ -1,8 +1,8 @@
 <?php
 
-namespace Bites\Common\Relations;
+namespace Bites\Core\Relations;
 
-use Bites\Common\Models\MeasurementConfig;
+use Bites\Core\Models\MeasurementConfig;
 use Filament\Actions\AssociateAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\CreateAction;
@@ -191,7 +191,7 @@ class Measurements extends RelationManager
                 ->visible(fn (callable $get) => $get('input_type') === 'ColorPicker'),
             \Filament\Forms\Components\Slider::make('value')->label('Value')->required()
                 ->visible(fn (callable $get) => $get('input_type') === 'Slider'),
-            \Bites\Common\Filament\Field\ScanCode::make('value')->label('Value')->required()
+            \Bites\Core\Filament\Field\ScanCode::make('value')->label('Value')->required()
                 ->visible(fn (callable $get) => $get('input_type') === 'ScanCode'),
 
         ];

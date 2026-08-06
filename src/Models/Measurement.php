@@ -1,6 +1,6 @@
 <?php
 
-namespace Bites\Common\Models;
+namespace Bites\Core\Models;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;

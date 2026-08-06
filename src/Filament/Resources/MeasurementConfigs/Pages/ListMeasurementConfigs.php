@@ -1,8 +1,8 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\MeasurementConfigs\Pages;
+namespace Bites\Core\Filament\Resources\MeasurementConfigs\Pages;
 
-use Bites\Common\Filament\Resources\MeasurementConfigs\MeasurementConfigResource;
+use Bites\Core\Filament\Resources\MeasurementConfigs\MeasurementConfigResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Schemas\Components\Tabs\Tab;

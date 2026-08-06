@@ -1,12 +1,12 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\MeasurementConfigs\Schemas;
+namespace Bites\Core\Filament\Resources\MeasurementConfigs\Schemas;
 
-use Bites\Common\Enums\MeasurementCategory;
-use Bites\Common\Enums\MeasurementInputType;
-use Bites\Common\Enums\MeasurementUnitType;
-use Bites\Common\Filament\Resources\MeasurementConfigs\Pages;
-use Bites\Common\Models\MeasurementConfig;
+use Bites\Core\Enums\MeasurementCategory;
+use Bites\Core\Enums\MeasurementInputType;
+use Bites\Core\Enums\MeasurementUnitType;
+use Bites\Core\Filament\Resources\MeasurementConfigs\Pages;
+use Bites\Core\Models\MeasurementConfig;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;

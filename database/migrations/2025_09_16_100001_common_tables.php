@@ -1,9 +1,9 @@
 <?php
 
-use Bites\Common\Enums\LocationType;
-use Bites\Common\Enums\MeasurementCategory;
-use Bites\Common\Enums\MeasurementInputType;
-use Bites\Common\Enums\MeasurementUnitType;
+use Bites\Core\Enums\LocationType;
+use Bites\Core\Enums\MeasurementCategory;
+use Bites\Core\Enums\MeasurementInputType;
+use Bites\Core\Enums\MeasurementUnitType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

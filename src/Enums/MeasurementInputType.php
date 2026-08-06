@@ -1,6 +1,6 @@
 <?php
 
-namespace Bites\Common\Enums;
+namespace Bites\Core\Enums;
 
 enum MeasurementInputType: string
 {

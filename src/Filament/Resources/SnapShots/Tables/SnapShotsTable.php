@@ -1,6 +1,6 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\SnapShots\Tables;
+namespace Bites\Core\Filament\Resources\SnapShots\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;

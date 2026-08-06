@@ -1,8 +1,8 @@
 <?php
 
-namespace Bites\Common\Traits;
+namespace Bites\Core\Traits;
 
-use Bites\Common\Models\Measurement;
+use Bites\Core\Models\Measurement;
 
 trait HasMeasurements
 {

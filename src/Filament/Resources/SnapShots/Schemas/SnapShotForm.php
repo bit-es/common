@@ -1,6 +1,6 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\SnapShots\Schemas;
+namespace Bites\Core\Filament\Resources\SnapShots\Schemas;
 
 use Filament\Schemas\Schema;
 

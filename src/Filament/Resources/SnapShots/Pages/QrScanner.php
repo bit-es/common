@@ -1,8 +1,8 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\SnapShots\Pages;
+namespace Bites\Core\Filament\Resources\SnapShots\Pages;
 
-use Bites\Common\Filament\Resources\SnapShots\SnapshotResource;
+use Bites\Core\Filament\Resources\SnapShots\SnapshotResource;
 use Filament\Resources\Pages\Page;
 
 class QrScanner extends Page

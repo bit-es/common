@@ -1,20 +1,20 @@
 <?php
 
-namespace Bites\Common;
+namespace Bites\Core;
 
-use Bites\Common\Filament\Resources;
+use Bites\Core\Filament\Resources;
 use Filament\Facades\Filament;
 use Illuminate\Support\ServiceProvider;
 
-class CommonServiceProvider extends ServiceProvider
+class CoreServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'bites');
 
-        // \Livewire\Livewire::component('bites.common.filament.resources.manage-tasks', ManageTasks::class);
-        // \Livewire\Livewire::component('bites.common.filament.resources.manage-photos', ManagePhotos::class);
+        // \Livewire\Livewire::component('bites.core.filament.resources.manage-tasks', ManageTasks::class);
+        // \Livewire\Livewire::component('bites.core.filament.resources.manage-photos', ManagePhotos::class);
 
         // Register TaskResource in the Filament panel
         // Filament::registerResources([

@@ -1,14 +1,14 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\MeasurementConfigs;
+namespace Bites\Core\Filament\Resources\MeasurementConfigs;
 
 use BackedEnum;
-use Bites\Common\Filament\Resources\MeasurementConfigs\Pages\CreateMeasurementConfig;
-use Bites\Common\Filament\Resources\MeasurementConfigs\Pages\EditMeasurementConfig;
-use Bites\Common\Filament\Resources\MeasurementConfigs\Pages\ListMeasurementConfigs;
-use Bites\Common\Filament\Resources\MeasurementConfigs\Schemas\MeasurementConfigForm;
-use Bites\Common\Filament\Resources\MeasurementConfigs\Tables\MeasurementConfigsTable;
-use Bites\Common\Models\MeasurementConfig;
+use Bites\Core\Filament\Resources\MeasurementConfigs\Pages\CreateMeasurementConfig;
+use Bites\Core\Filament\Resources\MeasurementConfigs\Pages\EditMeasurementConfig;
+use Bites\Core\Filament\Resources\MeasurementConfigs\Pages\ListMeasurementConfigs;
+use Bites\Core\Filament\Resources\MeasurementConfigs\Schemas\MeasurementConfigForm;
+use Bites\Core\Filament\Resources\MeasurementConfigs\Tables\MeasurementConfigsTable;
+use Bites\Core\Models\MeasurementConfig;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;

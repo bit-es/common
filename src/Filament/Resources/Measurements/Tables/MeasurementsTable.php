@@ -1,6 +1,6 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\Measurements\Tables;
+namespace Bites\Core\Filament\Resources\Measurements\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;

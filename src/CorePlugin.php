@@ -1,8 +1,8 @@
 <?php
 
-namespace Bites\Common;
+namespace Bites\Core;
 
-use Bites\Common\Filament\Resources;
+use Bites\Core\Filament\Resources;
 use Closure;
 use Filament\Facades\Filament;
 use Filament\Contracts\Plugin;
@@ -10,7 +10,7 @@ use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
 use Illuminate\Support\Facades\Route;
 
-class CommonPlugin implements Plugin
+class CorePlugin implements Plugin
 {
     use EvaluatesClosures;
 
@@ -28,7 +28,7 @@ class CommonPlugin implements Plugin
 
     public function getId(): string
     {
-        return 'common';
+        return 'core';
     }
 
     public function register(Panel $panel): void

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bites\Common\Filament\Resources\Measurements\Schemas;
+namespace Bites\Core\Filament\Resources\Measurements\Schemas;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;

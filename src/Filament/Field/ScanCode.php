@@ -1,6 +1,6 @@
 <?php
 
-namespace Bites\Common\Filament\Field;
+namespace Bites\Core\Filament\Field;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Support\Icons\Heroicon;

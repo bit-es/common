@@ -1,8 +1,8 @@
 <?php
 
-namespace Bites\Common\Traits;
+namespace Bites\Core\Traits;
 
-use Bites\Common\Models\Camera;
+use Bites\Core\Models\Camera;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasCamera
